@@ -1,5 +1,5 @@
 {
-  "name": "angular-material-sidenav-custom",
+  "name": "vertical-angular-material-sidenav",
   "version": "0.0.6",
   "homepage": "https://github.com/SachinKhosla99/angular-material-sidenav.git",
   "authors": [
@@ -15,7 +15,7 @@
     "material",
     "angular-material",
     "sidenav",
-    "angular-material-sidenav-custom"
+    "vertical-angular-material-sidenav"
   ],
   "dependencies": {
     "angular": "^1.3.0",

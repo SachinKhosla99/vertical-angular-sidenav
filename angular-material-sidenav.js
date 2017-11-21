@@ -2,10 +2,10 @@
 
 /**
  *
- * Angular Material Sidenav
- * https://github.com/sovanna/angular-material-sidenav
+ * Veritcal alligned Angular Material Sidenav
+ * https://github.com/SachinKhosla99/vertical-angular-sidenav.git
  * Licence MIT
- * (c) 2015 Sovanna Hing <sovanna.hing@gmail.com>
+ * (c) 2017 Sachin Khosla <sachin@digimantra.com>
  *
  */
 (function(window, angular, undefined) {

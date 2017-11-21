@@ -1,13 +1,10 @@
-# angular-material-sidenav [NO MORE MAINTAINED]
-
-**Warning: this project is not maintained anymore. I've moved to React and stopped following Angular for the moment. However, I still watch the project for pull request**
 
 Simple component that reproduce the Angular Material Style SideNav Menu from their own website [material.angularjs.org](https://material.angularjs.org/).
-Available [Demo](http://sovanna.github.io/angular-material-sidenav/demo/dist)
+
 
 ##### 1. Installation
 
-	bower install angular-material-sidenav --save
+	bower install vertical-angular-material-sidenav --save
 
 ##### 2. Configuration
 
