@@ -1,6 +1,6 @@
 {
   "name": "vertical-angular-material-sidenav",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "homepage": "https://github.com/SachinKhosla99/angular-material-sidenav.git",
   "authors": [
     "Sachin Khosla <sachin@digimantra.com>"
@@ -31,3 +31,4 @@
   "private": false,
   "license": "MIT"
 }
+bower register vertical-angular-material-sidenav https://github.com/SachinKhosla99/vertical-angular-sidenav.git
