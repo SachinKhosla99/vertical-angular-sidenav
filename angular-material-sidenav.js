@@ -304,25 +304,25 @@
                     return console.warn('ss-sidenav: `menuToggle` cannot find ul element');
                 }
 
-                $scope.$watch(function() {
-                    return $ctrl.isOpen($scope.section);
-                }, function(open) {
-                    $timeout(function() {
-                        if (!$mdMedia('gt-sm') && !$mdSidenav('left').isOpen() && open) {
-                            return;
-                        }
+                // $scope.$watch(function() {
+                //     return $ctrl.isOpen($scope.section);
+                // }, function(open) {
+                //     $timeout(function() {
+                //         if (!$mdMedia('gt-sm') && !$mdSidenav('left').isOpen() && open) {
+                //             return;
+                //         }
 
-                        $animateCss(_el_ul, {
-                            from: {
-                                height: open ? 0 : (getTargetHeight() + 'px')
-                            },
-                            to: {
-                                height: open ? (getTargetHeight() + 'px') : 0
-                            },
-                            duration: 0.3
-                        }).start();
-                    }, 0, false);
-                });
+                //         $animateCss(_el_ul, {
+                //             from: {
+                //                 height: open ? 0 : (getTargetHeight() + 'px')
+                //             },
+                //             to: {
+                //                 height: open ? (getTargetHeight() + 'px') : 0
+                //             },
+                //             duration: 0.3
+                //         }).start();
+                //     }, 0, false);
+                // });
             };
 
             return {
@@ -425,10 +425,9 @@
         );
 
         $templateCache.put('views/ss/menu-toggle.tmpl.html',
-            '<md-button class="md-raised md-primary md-button-toggle"\n' +
-            '   ng-click="toggle(section)"\n' +
-            '   aria-controls="docs-menu-{{section.name}}"\n' +
-            '   aria-expanded="{{isOpen(section)}}">\n' +
+            '<md-menu>' +
+            '<md-button class="md-raised md-primary md-button-toggle" ng-click="$mdMenu.open($event)"  \n' +
+            '  aria-controls="docs-menu-{{section.name}}" aria-expanded="{{isOpen(section)}}">\n' +
             '   <div class="text-center">\n' +
             '       <span ng-if="section.icon" class="{{section.icon}}">&nbsp;&nbsp;</span>\n' +
             '       <span aria-hidden="true" class="md-toggle-icon"\n' +
@@ -436,17 +435,22 @@
             '           <md-icon md-svg-src="md-toggle-arrow"></md-icon>\n' +
             '       </span>\n' +
             '   </div>\n' +
-            '   <span class="md-visually-hidden">\n' +
-            '       Toggle {{isOpen(section)? \'expanded\' : \'collapsed\'}}\n' +
-            '   </span>\n' +
             '<span class="{{section.name}}">{{section.name}}</span>\n' +
             '</md-button>\n' +
-            '\n' +
-            '<ul id="docs-menu-{{section.name}}" class="menu-toggle-list">\n' +
-            '   <li ng-repeat="page in section.pages" ng-if="!page.hidden">\n' +
-            '       <menu-link section="page"></menu-link>\n' +
-            '   </li>\n' +
-            '</ul>\n'
+            '<md-menu-content width="6">'+
+            '<md-menu-item class="menu-toggle-list" ng-repeat="page in section.pages" ng-if="!page.hidden">\n' +
+            '   <md-button\n' +
+            '      class="md-raised md-primary"' +
+            '       ui-sref="{{page.state}}"\n' +
+            '       ng-click="focusSection(page)">\n' +
+            '       <span ng-if="page.icon" class="{{page.icon}}">&nbsp;&nbsp;</span>' +
+            '           {{page.name}}\n' +
+            '       <span class="md-visually-hidden" ng-if="isSelected(page.state)">\n' +
+            '         current page\n' +
+            '      </span>\n' +
+            '   </md-button>\n'+            
+            '</md-menu-content>'+
+            '</md-menu>'
         );
 
         $templateCache.put('views/ss/menu-sidenav.tmpl.html',
