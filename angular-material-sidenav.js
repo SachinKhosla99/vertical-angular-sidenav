@@ -1,3 +1,4 @@
+    5:31 PM
 /*global console*/
 
 /**
@@ -27,7 +28,8 @@
             _palettes = value._PALETTES;
         };
 
-        this.$get = [function ssSideNavSectionsFactory() {
+  
+      this.$get = [function ssSideNavSectionsFactory() {
             var SSSideNavSections = function() {
                 this.sections = _sections;
                 this.theme = _theme;
@@ -413,7 +415,7 @@
         $templateCache.put('views/ss/menu-link.tmpl.html',
             '<md-button\n' +
             '   ss-style-color="{\'background-color\': (isSelected(section.state) || $state.includes(section.state)) ? \'primary.800\': \'primary.default\'}"' +
-            '   class="md-raised md-primary"' +
+            '   class="md-raised md-primary" ng-class="(isSelected(section.state) || $state.includes(section.state)) ? \'navbar-checked-active\' : \'\'" ' +
             '   ui-sref="{{section.state}}"\n' +
             '   ng-click="focusSection(section)">\n' +
             '   <span ng-if="section.icon" class="{{section.icon}}">&nbsp;&nbsp;</span>{{section.name}}\n' +
@@ -440,7 +442,7 @@
             '<md-menu-content width="6">'+
             '<md-menu-item class="menu-toggle-list" ng-repeat="page in section.pages" ng-if="!page.hidden">\n' +
             '   <md-button\n' +
-            '      class="md-raised md-primary"' +
+            '      class="md-raised md-primary" ng-class="(isSelected(section.state) || $state.includes(section.state)) ? \'navbar-checked-active\' : \'\'"' +
             '       ui-sref="{{page.state}}"\n' +
             '       ng-click="focusSection(page)">\n' +
             '       <span ng-if="page.icon" class="{{page.icon}}">&nbsp;&nbsp;</span>' +
@@ -457,7 +459,7 @@
             '<ul class="menu">' +
             '    <li ss-style-color="{\'border-bottom-color\': \'primary.600\'}" ng-repeat="section in menu.sections" ng-if="!section.hidden">' +
             '        <h2 ss-style-color="{\'color\': \'primary.A100\'}" class="menu-heading md-subhead" ng-if="section.type === \'heading\'">' +
-            '            <span ng-if="section.icon" class="{{section.icon}}">&nbsp;&nbsp;</span>{{section.name}}\n' +
+            '            <span ng-if="section.icon" class="{{section.icon}}">  </span>{{section.name}}\n' +
             '        </h2>' +
             '        <menu-link section="section" ng-if="section.type === \'link\'"></menu-link>' +
             '        <menu-toggle section="section" ng-if="section.type === \'toggle\'"></menu-toggle>' +
