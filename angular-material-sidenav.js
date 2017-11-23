@@ -1,4 +1,3 @@
-    5:31 PM
 /*global console*/
 
 /**
