@@ -1,4 +1,3 @@
-    5:31 PM
 /*global console*/
 
 /**
@@ -233,6 +232,9 @@
                     };
                 }
             });
+            setTimeout(function(){ 
+                angular.element('.angular-material-sidenav-custom').parent().addClass('custom-material-class');
+            }, 500);
         }
     ])
 
@@ -439,7 +441,7 @@
             '   </div>\n' +
             '<span class="{{section.name}}">{{section.name}}</span>\n' +
             '</md-button>\n' +
-            '<md-menu-content width="6">'+
+            '<md-menu-content class="angular-material-sidenav-custom" width="6">'+
             '<md-menu-item class="menu-toggle-list" ng-repeat="page in section.pages" ng-if="!page.hidden">\n' +
             '   <md-button\n' +
             '      class="md-raised md-primary" ng-class="(isSelected(section.state) || $state.includes(section.state)) ? \'navbar-checked-active\' : \'\'"' +
