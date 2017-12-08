@@ -234,7 +234,7 @@
             });
             setTimeout(function(){ 
                 angular.element('.angular-material-sidenav-custom').parent().addClass('custom-material-class');
-            }, 500);
+            }, 500);                
         }
     ])
 
@@ -420,7 +420,9 @@
             '   class="md-raised md-primary" ng-class="(isSelected(section.state) || $state.includes(section.state)) ? \'navbar-checked-active\' : \'\'" ' +
             '   ui-sref="{{section.state}}"\n' +
             '   ng-click="focusSection(section)">\n' +
-            '   <span ng-if="section.icon" class="{{section.icon}}">&nbsp;&nbsp;</span>{{section.name}}\n' +
+            '   <span ng-if="section.icon" class="{{section.icon}}">&nbsp;&nbsp;</span>'+
+            '   <span ng-if="section.iconMaterial" class="{{section.iconMaterial}}"><i class="material-icons">{{section.iconMaterial}}</i></span>'+
+            '   <span class="{{section.custClass}}">{{section.name}}<span>\n' +
             '   <span class="md-visually-hidden"\n' +
             '       ng-if="isSelected(section.state)">\n' +
             '       current page\n' +
@@ -448,7 +450,7 @@
             '       ui-sref="{{page.state}}"\n' +
             '       ng-click="focusSection(page)">\n' +
             '       <span ng-if="page.icon" class="{{page.icon}}">&nbsp;&nbsp;</span>' +
-            '           {{page.name}}\n' +
+            '       <span class="{{page.custClass}}">{{page.name}}\n </span>' +
             '       <span class="md-visually-hidden" ng-if="isSelected(page.state)">\n' +
             '         current page\n' +
             '      </span>\n' +
